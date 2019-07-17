@@ -70,7 +70,7 @@ class Client extends \GuzzleHttp\Client
      *
      * @return \Closure
      */
-    public function addHeaders()
+    private function addHeaders()
     {
         return function (callable $handler)
         {
