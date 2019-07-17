@@ -135,7 +135,7 @@ class Client extends \GuzzleHttp\Client
 
         if ($request->getHeaderLine("Content-Type") == "application/x-www-form-urlencoded")
         {
-            $requestParams = array_merge(parse_query($request->getBody()), $requestParams);
+            $requestParams = array_merge($requestParams, parse_query($request->getBody()));
         }
 
         if (!empty($requestParams))
