@@ -1,5 +1,5 @@
 ## Api-php
-The [Aliyun API](https://www.aliyun.com/product/apigateway) Client In PHP
+The [Aliyun API](https://www.aliyun.com/product/apigateway) SDK In PHP
 
 ## Installation
 `composer require aliyunsdk/api`
