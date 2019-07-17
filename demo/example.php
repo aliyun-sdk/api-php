@@ -4,26 +4,36 @@ include "../vendor/autoload.php";
 
 use aliyunsdk\api\Client;
 
-class PingSVRClient extends Client
+class TestClient extends Client
 {
     public function ping()
     {
-        return $this->get("/ping");
+        return $this->post("/ping");
     }
 }
 
-$testSVR = new PingSVRClient([
-    "base_uri" => "API URL",
-    "app_key" => "APP KEY",
-    "app_secret" => "APP SECRET",
-    "app_code" => "APP CODE",
+// 完全兼容GuzzleHttp\Client的用法
+
+$testSVR = new TestClient([
+    "base_uri" => "您的API地址",
+
+    // 配置了app_code启用简单认证，则无需提供app_key和app_secret
+    // 相反若提供了app_key和app_secret也无需再提供app_code
+    // 两者app_code优先
+
+    "app_key" => "您的APP KEY",
+    "app_secret" => "您的APP SECRET",
+    "app_code" => "您的APP CODE",
+
     "query" => [
-        "test" => 2,
+        "params1" => 1,
     ],
+
     "form_params" => [
-        "test1" => 1,
+        "params2" => 2,
     ],
-    'body' => "xx",
+
+    'body' => "my content",
 ]);
 
 echo $testSVR->ping()->getBody()->getContents();
