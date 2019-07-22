@@ -2,7 +2,7 @@
 The [Aliyun API](https://www.aliyun.com/product/apigateway) SDK In PHP
 
 ## Installation
-`composer require aliyunsdk/api-php`
+`composer require aliyun-sdk/api-php`
 
 ## Usage
 
