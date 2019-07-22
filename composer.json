@@ -1,11 +1,11 @@
 {
-  "name": "aliyunsdk/api-php",
+  "name": "aliyun-sdk/api-php",
   "require": {
     "guzzlehttp/guzzle": "^6.3"
   },
   "autoload": {
     "psr-4": {
-      "aliyunsdk\\api\\": "./"
+      "AliyunSDK\\Api\\": "./"
     }
   }
 }

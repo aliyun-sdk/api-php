@@ -2,7 +2,7 @@
 
 include "../vendor/autoload.php";
 
-use aliyunsdk\api\Client;
+use AliyunSDK\Api\Client;
 
 class TestClient extends Client
 {

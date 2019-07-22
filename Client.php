@@ -1,6 +1,6 @@
 <?php
 
-namespace aliyunsdk\api;
+namespace AliyunSDK\Api;
 
 use GuzzleHttp\HandlerStack;
 use function GuzzleHttp\Psr7\parse_query;
@@ -59,7 +59,11 @@ class Client extends \GuzzleHttp\Client
 
         unset($config["app_key"], $config["app_secret"], $config["app_code"], $config["stage"]);
 
-        $config["handler"] = HandlerStack::create();
+        if (!isset($config["handler"]))
+        {
+            $config["handler"] = HandlerStack::create();
+        }
+
         $config["handler"]->push($this->addHeaders());
 
         parent::__construct($config);
